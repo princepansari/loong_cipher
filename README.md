@@ -1,4 +1,4 @@
-# Loong: A Family of Involutional Lightweight : Block Cipher
+# Loong: A Family of Involutional Lightweight Block Cipher
 
 ## Team Members
 - Anmol Sagar(11840180)
