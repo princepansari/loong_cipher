@@ -8,10 +8,10 @@ Assignment in CS553 of IIT Bhilai. It is to learn lightweight crypto and grow ou
 - Ashutosh Garg (ID: 11840250)
 - Prince Kumar Pansari (ID: 11840860)
 
-## PPT FILE
+## Ppt File Name
 Loong_presentation.pdf
 
-## Term Paper
+## Term Paper Name
 Loong_Termpaper.pdf
 
 ## Code snippets
