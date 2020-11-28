@@ -3,9 +3,8 @@ constants = [0x01, 0x03, 0x07, 0x0F, 0x1F, 0x3E, 0x3D, 0x3B, 0x37, 0x2F, 0x1E,
              0x3C, 0x39, 0x33, 0x27, 0x0E, 0x1D, 0x3A, 0x35, 0x2B, 0x16, 0x2C,
              0x18, 0x30, 0x21, 0x02, 0x05, 0x0B, 0x17, 0x2E, 0x1C, 0x38, 0x31]
 
-# Function to add round key in the state
 
-
+# Function of AddRoundKey Operation
 def addRoundKey(state, round_key, const):
     matrix = [[0] * 4 for _ in range(4)]
     rc = []
@@ -19,20 +18,21 @@ def addRoundKey(state, round_key, const):
         for j in range(4):
             matrix[i][j] = state[i][j] ^ round_key[i][j] ^ round_constant[i][j]
     return matrix
-# Function to substitute each bit according to sbox in the cell
+  
 
-
+# Function of subcell for each bit according to sbox in the cell
 def subcell(state):
     matrix = [[0] * 4 for _ in range(4)]
+    #S-Box of Loong
     sbox = [0x0C, 0x0A, 0x0D, 0x03, 0x0E, 0x0B, 0x0F, 0x07,
             0x09, 0x08, 0x01, 0x05, 0x00, 0x02, 0x04, 0x06]
     for i in range(4):
         for j in range(4):
             matrix[i][j] = sbox[state[i][j]]
     return matrix
-# Function to give multiplication of a,b in G(2^3)
+  
 
-
+# Function to give multiplication of a,b in G(2^4) with the irreducible polynomial
 def galoisMultiplication(a, b):
     ans = 0
     for i in range(4):
@@ -44,9 +44,9 @@ def galoisMultiplication(a, b):
         if check == 8:
             a ^= 3
     return ans % 16
-# Function to mix row of the state
+  
 
-
+# Function of MixRow Operation for Loong
 def mixRow(state):
     matrix = [[0] * 4 for _ in range(4)]
     mat = [[1, 4, 9, 13], [4, 1, 13, 9], [9, 13, 1, 4], [13, 9, 4, 1]]
@@ -57,9 +57,9 @@ def mixRow(state):
                 temp = temp ^ galoisMultiplication(state[i][k], mat[k][j])
             matrix[i][j] = temp
     return matrix
-# Function to mix column of the state
 
 
+# Function Of MixColumn operation 
 def mixColumn(state):
     matrix = [[0] * 4 for _ in range(4)]
     mat = [[13, 9, 4, 1], [9, 13, 1, 4], [4, 1, 13, 9], [1, 4, 9, 13]]
@@ -70,9 +70,8 @@ def mixColumn(state):
                 temp = temp ^ galoisMultiplication(mat[i][k], state[k][j])
             matrix[i][j] = temp
     return matrix
-# function to get cipher from the state
-
-
+  
+# Function to get hexadecimal value from the state
 def cipher_from_state(state):
     cipher = ""
     for i in range(4):
@@ -81,8 +80,6 @@ def cipher_from_state(state):
     return cipher
 
 # function for loong-64
-
-
 def algo_64bit(text, key, rc):
     state = [[0] * 4 for _ in range(4)]
     round_key = [[0] * 4 for _ in range(4)]
@@ -100,12 +97,11 @@ def algo_64bit(text, key, rc):
     ciphertext = cipher_from_state(state)
     return ciphertext
 
+
 # function for loong-80
-
-
 def algo_80bit(text, key, rc):
     state = [[0] * 4 for _ in range(4)]
-    round_key0 = [[0] * 4 for _ in range(4)]
+    round_key0 = [[0] * 4 for _ in range(4)] #Since loong-80 uses two round key, we are calculating it.
     round_key1 = [[0] * 4 for _ in range(4)]
     for i in range(4):
         for j in range(4):
@@ -129,11 +125,9 @@ def algo_80bit(text, key, rc):
     return ciphertext
 
 # function for loong-128
-
-
 def algo_128bit(text, key, rc):
     state = [[0] * 4 for _ in range(4)]
-    round_key0 = [[0] * 4 for _ in range(4)]
+    round_key0 = [[0] * 4 for _ in range(4)] #Since loong-128 uses two round key, we are calculating it.
     round_key1 = [[0] * 4 for _ in range(4)]
     for i in range(4):
         for j in range(4):
@@ -154,8 +148,6 @@ def algo_128bit(text, key, rc):
     return ciphertext
 
 # Function to encrypt the plaintext
-
-
 def encryption(n, plaintext, key):
     if n == 64 and len(plaintext) == 16 and len(key) == 16:
         cipher = algo_64bit(plaintext, key, constants)
@@ -168,8 +160,6 @@ def encryption(n, plaintext, key):
     return cipher
 
 # Function to decrypt the plaintext
-
-
 def decryption(n, cipher, key):
     if n == 64 and len(cipher) == 16 and len(key) == 16:
         reverse_constant = constants[0:17][::-1]
