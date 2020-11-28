@@ -1,7 +1,7 @@
 # Loong: A Family of Involutional Lightweight Block Cipher
 
-## Motive
-Assignment in cs553 of IIT Bhilai.
+## Motivation
+Assignment in CS553 of IIT Bhilai. It is to learn lightweight crypto and grow our knowleage.
 
 ## Team Members
 - Anmol Sagar (ID: 11840180)
@@ -9,7 +9,15 @@ Assignment in cs553 of IIT Bhilai.
 - Prince Kumar Pansari (ID: 11840860)
 
 ## PPT FILE
-Loong_Beamer.pdf
+Loong_presentation.pdf
 
 ## Term Paper
-Loong.pdf
+Loong_Termpaper.pdf
+
+## Code snippets
+### To run
+```sh
+python3 loong.py 
+```
+
+
