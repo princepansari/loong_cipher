@@ -28,3 +28,7 @@ python3 lat.py
 python3 ddt.py 
 ```
 
+## Code Output
+### loong.py
+![](./src/loong_output.png)
+

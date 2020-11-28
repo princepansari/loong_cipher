@@ -176,34 +176,36 @@ def decryption(n, cipher, key):
 
 
 # Driver code
+print("For Loong-128")
 n = 128
 plaintext = "0000000000000000"
 key = "00000000000000000000000000000000"
-print(plaintext)
+print(f'Plaintext : {plaintext}')
 ciphertext = encryption(n, plaintext, key)
-print(ciphertext)
+print(f'Ciphertext : {ciphertext}')
 text = decryption(n, ciphertext, key)
-print(text)
-print()
+print(f'After Decrypting above cipher text : {text}')
+# print()
 
 
+print("\n\nFor Loong-80")
 n = 80
 plaintext = "0000000000000000"
 key = "00000000000000000000"
-print(plaintext)
+print(f'Plaintext : {plaintext}')
 ciphertext = encryption(n, plaintext, key)
-print(ciphertext)
+print(f'Ciphertext : {ciphertext}')
 text = decryption(n, ciphertext, key)
-print(text)
-print()
+print(f'After Decrypting above cipher text : {text}')
+# print()
 
-
+print("\n\nFor Loong-64")
 n = 64
 plaintext = "0000000000000000"
 key = "0000000000000000"
-print(plaintext)
+print(f'Plaintext : {plaintext}')
 ciphertext = encryption(n, plaintext, key)
-print(ciphertext)
+print(f'Ciphertext : {ciphertext}')
 text = decryption(n, ciphertext, key)
-print(text)
+print(f'After Decrypting above cipher text : {text}')
 print()
