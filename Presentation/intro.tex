@@ -1,0 +1,46 @@
+\section{Introduction}
+\begin{frame}{Why Lightweight Cryptography?}
+\begin{itemize}
+    \item Lightweight Cryptography become one of the very important field from last few years, provides security with very low computation power
+    \pause
+    \item Deals with RFID tags, wireless sensor network, small internet enabled application that are called \textbf{IoT} arises
+    \pause
+    \item Should have less amount of code and easy to implement on hardware.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Lightweight Block Ciphers}
+    \begin{itemize}
+        \item There are two structure of block ciphers
+        \begin{itemize}
+            \item Substitution Permutation Network(SPN)
+            \item Feistel Network
+        \end{itemize}
+        \pause
+        \item Feistel Network have same encryption and decryption process but inefficient in terms of number of round, ex. DES
+        \pause
+        \item SPN are efficient in terms of number of round but hard to implement because have different encryption and decryption process. That's leads to
+        \pause
+        \begin{itemize}
+            \item big circuits for hardware, needs more space and energy
+            \pause
+            \item Too much code for smart card, makes it infeasible
+            \pause
+            \item For Software, cipher and it's inverse needs different code
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+
+
+
+
+\begin{frame}{Loong : A LightWeight Block Cipher}
+    \begin{itemize}
+        \item Loong is a LightWeight Block Cipher that uses SPN structure
+        \pause
+        \item Loong uses SPN construction that have same encryption and decryption process
+    \end{itemize}
+    \pause
+     Lets see how ...
+\end{frame}

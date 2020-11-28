@@ -1,0 +1,61 @@
+\documentclass[hyperref={pdfpagelabels=false}]{beamer}
+\usepackage{lmodern}
+\usetheme{Frankfurt}
+\usecolortheme{crane}
+\newcommand{\TeaserImage}[1]{\vcenter{\hbox{\includegraphics[height=2cm]{#1}}}}
+\setbeamercovered{transparent}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+
+\title{Loong: A family of Involutional
+Lightweight Block Cipher}  
+\author{\texttt{YAnonymous}} 
+\institute{
+	\includegraphics[scale=0.08]{logoiitbh}
+	
+	Department of \texttt{Computer Science}\\ 
+	Indian Institute of Technology Bhilai}
+
+\begin{document}
+	\begin{frame}
+	\titlepage
+
+\end{frame} 
+
+\AtBeginSection[]
+{
+	\begin{frame}<beamer>
+	\frametitle{Outline}
+	\tableofcontents[currentsection]
+\end{frame}
+}
+
+\input{intro}
+\input{spec}
+\input{observe}
+\input{analysis}
+\input{bpnominate}
+\input{conclu}
+
+
+\begin{frame}{Thank You}
+\begin{block}{Team Members}
+	\begin{itemize}
+		\item Anmol Sagar(11840180)
+		\item Ashutosh Garg(11840250)
+		\item Prince Kumar Pansari(11840860)
+	\end{itemize}
+\end{block}
+\begin{block}{Implementation Info}
+	\begin{itemize}
+		\item Github Link: \href{https://github.com/princepansari/loong\_cipher}{https://github.com/princepansari/loong\_cipher}
+	\end{itemize}
+\end{block}
+\end{frame}
+
+\end{document}
