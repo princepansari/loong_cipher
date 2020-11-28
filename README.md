@@ -3,6 +3,9 @@
 ## Motivation
 Assignment in CS553 of IIT Bhilai. It is to learn lightweight crypto and grow our knowleage.
 
+## Group Name
+YAnonymous
+
 ## Team Members
 - Anmol Sagar (ID: 11840180)
 - Ashutosh Garg (ID: 11840250)
@@ -27,4 +30,3 @@ python3 lat.py
 ```sh
 python3 ddt.py 
 ```
-
